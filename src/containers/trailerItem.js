@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {recommendations, loadMovie} from '../actions/actionTrailer'
+import {loadMovie} from '../actions/actionTrailer'
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
@@ -15,7 +15,6 @@ class TrailerItem extends Component{
         return (
             <li className = "list-group-item trailerItem" onClick = {(e) => {
                                                     this.props.loadMovie(this.props.trailer.id)
-                                                    this.props.recommendations(this.props.trailer.id)
                                                     }}>
                 <div className = "media">
                     <div  className = "media-left">
@@ -31,7 +30,7 @@ class TrailerItem extends Component{
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({recommendations, loadMovie}, dispatch)
+    return bindActionCreators({loadMovie}, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(TrailerItem)

@@ -16,6 +16,7 @@ export function discoverMovie(){
 export function loadMovie(id){
     return requestGET(`${END_POINT}/movie/${id}`, (dispatch, response) => {
         dispatch({type : ACTIONS.TRAILER, payload : response.data})
+        recommendations(id)(dispatch)
     }, (dispatch, error) => {
         dispatch({type : ACTIONS.TRAILER_FAILED})
     })
@@ -26,5 +27,13 @@ export function recommendations(id){
         dispatch({type : ACTIONS.DISCOVERY_MOVIE, payload : response.data.results})
     }, (dispatch, error) => {
         dispatch({type : ACTIONS.DISCOVERY_MOVIE_FAILED})
+    })
+}
+
+export function searchText(text){
+    return requestGET(`${END_POINT}/searchMovie?text=${text}`, (dispatch, response) => {
+        dispatch({type : ACTIONS.SEARCH_TRAILER, payload : response.data.results})
+    }, (dispatch, error) => {
+        dispatch({type : ACTIONS.SEARCH_TRAILER_FAILED})
     })
 }

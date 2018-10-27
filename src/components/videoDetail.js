@@ -3,8 +3,8 @@ import React from 'react'
 const VideoDetail = ({title, description}) => {
     return (
         <div>
-            <h1>{title}</h1>
-            <p className = "descriptionVideo">{description}</p>
+            <h1>{title || "Titre non disponible"}</h1>
+            <p className = "descriptionVideo">{description || "Description non disponible"}</p>
         </div>
     )
 }

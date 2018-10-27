@@ -7,11 +7,23 @@
 }
 
 .title_list_item {
-    padding-top: 40px;
+    padding-top: 20px;
     text-align: center;
 }
 
 .videoNoPresent {
     padding-top: 100px;
     text-align: center;
+}
+
+.trailers {
+    margin-top: 10px;
+}
+
+.react-autosuggest__input {
+    width: 100%;
+}
+  
+.react-autosuggest__suggestions-list {
+    list-style-type: none;
 }

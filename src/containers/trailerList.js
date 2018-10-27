@@ -5,6 +5,9 @@ import TrailerItem from './trailerItem'
 class TrailerList extends Component{
 
     render(){
+        if(!this.props.listTrailer || !this.props.listTrailer[0]){
+            return <div>Recommendation non disponible</div>
+        }
         return (
             <ul>
                 {
