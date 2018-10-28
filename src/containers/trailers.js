@@ -6,6 +6,7 @@ import TrailerList from './trailerList'
 import Trailer from './trailer'
 import SearchBar from './searchBar'
 import Comments from './comments'
+import MenuBar from '../components/menuBar'
 import PostComment from './postComment'
 
 class Trailers extends Component{
@@ -16,12 +17,15 @@ class Trailers extends Component{
 
     render(){
         return (
-            <div className = "row trailers">
-                <div className = "col-md-8">
-                    <SearchBar />
-                    {this.renderTrailer()}
+            <div>
+                <MenuBar current = "trailers" />
+                <div className = "row trailers">
+                    <div className = "col-md-8">
+                        <SearchBar />
+                        {this.renderTrailer()}
+                    </div>
+                    <div className = "col-md-4"><TrailerList /></div>
                 </div>
-                <div className = "col-md-4"><TrailerList /></div>
             </div>
         )
     }

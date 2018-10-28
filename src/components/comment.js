@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default Comment = function(props){
+const Comment = function(props){
     const {comment, comments} = props
     return (
         <div className = "list-group-item">
@@ -30,3 +30,5 @@ function addButtonSubComment(comment, props){
 function formatDate(date) {
     return date.substring(0, 10)
 }
+
+export default Comment

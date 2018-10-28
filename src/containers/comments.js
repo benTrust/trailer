@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import Comment from './comment'
+import Comment from '../components/comment'
 import {subComment} from '../actions/actionComment'
 import {bindActionCreators} from 'redux'
 
