@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Comment from './comment'
+import {subComment} from '../actions/actionComment'
+import {bindActionCreators} from 'redux'
 
 class Comments extends Component{
 
@@ -18,9 +20,13 @@ class Comments extends Component{
         return(
             <div>
                 {comments.map(comment => {
-                    return <Comment key = {comment.id} comment = {comment} commentRoot = {true} comments = {comment.comments} />
+                    return <Comment key = {comment.id} comment = {comment} commentRoot = {true} comments = {comment.comments} subComment = {this.subComment.bind(this)} />
                 })}
             </div>)
+    }
+
+    subComment(comment){
+        this.props.subComment(comment)
     }
 }
 
@@ -30,4 +36,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(Comments)
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({subComment}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Comments)
