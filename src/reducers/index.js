@@ -4,6 +4,7 @@ import ReducerUserFailed from './reducerUserFailed'
 import ReducerDiscoveryMovie from './reducerDiscoveryMovie'
 import ReducerTrailer from './reducerTrailer'
 import ReducerSearchMovies from './reducerSearchMovies'
+import ReducerSubComment from './reducerSubComment'
 import {reducer as ReducerForm} from 'redux-form'
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   form : ReducerForm,
   discoveryMovie : ReducerDiscoveryMovie,
   trailer : ReducerTrailer,
-  searchMovies : ReducerSearchMovies
+  searchMovies : ReducerSearchMovies,
+  subComment : ReducerSubComment
 });
 
 export default rootReducer;

@@ -5,6 +5,8 @@ import {discoverMovie, loadMovie} from '../actions/actionTrailer'
 import TrailerList from './trailerList'
 import Trailer from './trailer'
 import SearchBar from './searchBar'
+import Comments from './comments'
+import PostComment from './postComment'
 
 class Trailers extends Component{
 
@@ -17,11 +19,31 @@ class Trailers extends Component{
             <div className = "row trailers">
                 <div className = "col-md-8">
                     <SearchBar />
-                    <Trailer />
+                    {this.renderTrailer()}
                 </div>
                 <div className = "col-md-4"><TrailerList /></div>
             </div>
         )
+    }
+
+    renderTrailer(){
+        if(!this.props.trailer){
+            return <div></div>
+        }
+        
+        return (
+            <div>
+                <Trailer />
+                <Comments /> 
+                <PostComment />
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        trailer : state.trailer
     }
 }
 
@@ -29,4 +51,4 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators({discoverMovie, loadMovie}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Trailers)
+export default connect(mapStateToProps, mapDispatchToProps)(Trailers)

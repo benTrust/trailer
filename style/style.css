@@ -27,3 +27,11 @@
 .react-autosuggest__suggestions-list {
     list-style-type: none;
 }
+
+.subComments{
+    margin-left: 20px;
+}
+
+.postComment{
+    margin-top : 20px
+}
