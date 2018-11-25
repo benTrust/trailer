@@ -19,13 +19,13 @@ class Trailers extends Component{
         return (
             <div>
                 <MenuBar current = "trailers" />
-                <div className = "row trailers">
-                    <div className = "col-md-8">
+                <section className = "row trailers">
+                    <article className = "col-md-8">
                         <SearchBar />
                         {this.renderTrailer()}
-                    </div>
-                    <div className = "col-md-4"><TrailerList /></div>
-                </div>
+                    </article>
+                    <aside className = "col-md-4"><TrailerList /></aside>
+                </section>
             </div>
         )
     }
